@@ -15,4 +15,12 @@ public class CubRotacioAutomatica : MonoBehaviour
     {
         transform.Rotate(new Vector3(15, 30, 46) * Time.deltaTime);
     }
+	
+	
+	
+
+	
+	
+	
+	
 }

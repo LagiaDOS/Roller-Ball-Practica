@@ -1,20 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControladorBola : MonoBehaviour
 {
     public float speed;
     private Rigidbody rb;
-   // private int contador;
-	//public Text marcador;
+    private int contador;
+	public Text marcador;
 	
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-		//contador= 0;
-	    //mostrarMarcador();
+		contador= 0;
+	    mostrarMarcador();
     }
 
     // Update is called once per frame
@@ -31,16 +32,16 @@ public class ControladorBola : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemic"))
         {
-            other.gameObject.SetActive(false); 
-	    	//contador++;
-	    	//mostrarMarcador();	
+            other.gameObject.SetActive(false);
+			contador++;
+			mostrarMarcador();
 		}
     }
 
-//private void mostrarMarcador()
-//{
-//	marcador.text = "Marcador: " + contador;
-//}
-	
+
+	private void mostrarMarcador()
+	{
+		marcador.text = "Marcador: " + contador;
+	}
 
 }

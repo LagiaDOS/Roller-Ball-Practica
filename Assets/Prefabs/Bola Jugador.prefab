@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7150345076805760853}
   m_Layer: 0
   m_Name: Bola Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,3 +124,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  marcador: {fileID: 4269137478020578327, guid: 34a88d72d90012b429932d7bba70515a,
+    type: 3}
