@@ -36,6 +36,10 @@ public class ControladorBola : MonoBehaviour
 			contador++;
 			mostrarMarcador();
 		}
+
+        //quant el contador sigui mes de 8, moure el teleport al centre del nivell
+        if (contador>8) { }
+
     }
 
 
