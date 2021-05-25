@@ -63,12 +63,27 @@ public class ControladorBola : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
+        Debug.Log(" On trigger enter en algo");
+
         if (other.gameObject.CompareTag("enemic"))
         {
             other.gameObject.SetActive(false);
             contador++;
             mostrarMarcador();
         }
+
+
+        if (other.gameObject.CompareTag("Stop"))
+        {
+            Debug.Log("entrat en un stop");
+        }
+
+
+
+
+
+
+
 
         //quant el contador sigui mes de 8, moure el teleport al centre del nivell
         if (contador>7)

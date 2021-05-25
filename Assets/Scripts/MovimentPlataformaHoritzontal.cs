@@ -4,62 +4,32 @@ using UnityEngine;
 
 public class MovimentPlataformaHoritzontal : MonoBehaviour
 {
-    public bool oscilancio;
-    public Transform plataforma;
-    public float moviment;
+    public Vector3 movement;
+    public float speed = 2.0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        plataforma = GetComponent<Transform>();
-        //if (oscilancio == true) { moviment = -moviment; }
+       // plataforma = GetComponent<Transform>();
+       //if (oscilancio == true) { moviment = -moviment; }
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //I dont know why but (in FixedUpdate) works
+        this.transform.Translate(movement * Time.deltaTime * speed);
+    }
 
-        if (this.transform.position.z>-32 || this.transform.position.z<-42) { moviment = -moviment; }
-
-        this.transform.Translate(new Vector3(0.0f, 0.0f, moviment));
-
-
-        /*
-        //va cap a endevant
-        if (oscilancio == false)
-        {
-            for (int i = 0; i < 50; i++)
-            {
-                //teleportar el objecte propi una mica (+0.1)
-
-                this.transform.Translate(new Vector3(0.0f, 0.0f, moviment));
-
-
-              //  plataforma.position = new Vector3(23.93f, moviment, 0.0f);
-
-                //ja ha arribat al limit, parem de anar en aquesta direccio i pasem a retrocedir
-                if (i == 100){oscilancio = true; Debug.Log("oscilacio true"); }
-            }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "parada")
+       {
+            movement = -movement;
+            Debug.Log("Moviment invertit");
         }
-
-        //va cap a enredere
-        if (oscilancio == true)
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                //teleportar el objecte propi una mica (-0.1)
-                plataforma.position = new Vector3(0, 0f, 0f);
-
-                //ja ha arribat al limit, parem de anar en aquesta direccio i pasem a retrocedir
-                if (i == 100){oscilancio = false;}
-            }
-        }
-
-        */
-
-
-
-
-
+        Debug.Log("Ccollider other");
     }
 
 

@@ -8,6 +8,8 @@ TagManager:
   - CEsquerra
   - CAdalt
   - CDreta
+  - Stop
+  - parada
   layers:
   - Default
   - TransparentFX
