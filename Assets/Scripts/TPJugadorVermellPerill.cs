@@ -17,12 +17,15 @@ public class TPJugadorVermellPerill : MonoBehaviour
     void Update()
     {}
 
-    private void OnTriggerEnter(Collider Player)
+    private void OnTriggerEnter(Collider other)
     {
 
-        Debug.Log("Teleportant fora del perill");
-        b.position = new Vector3(0.02f, 1.5f, 13.54f);
-        RBBola.velocity = new Vector3(0, 0, 0);
+        if (other.gameObject.tag == "Player")
+         { 
+         Debug.Log("Teleportant fora del perill");
+         b.position = new Vector3(0.02f, 1.5f, 13.54f);
+         RBBola.velocity = new Vector3(0, 0, 0);
+         }
 
     }
 

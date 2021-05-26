@@ -10,6 +10,8 @@ public class Deathzone : MonoBehaviour
     public GameObject jugador;
     public Transform j;
 
+    public int contadormorts;
+
     // Start is called before the first frame update
     void Start()
     {}
@@ -19,10 +21,11 @@ public class Deathzone : MonoBehaviour
     {}
 
 
-    private void OnTriggerEnter(Collider Player)
+    private void OnTriggerEnter(Collider other)
     {
-     
 
+        if (other.gameObject.tag == "Player")
+        { 
 
         switch (zona)
         {
@@ -39,7 +42,7 @@ public class Deathzone : MonoBehaviour
             case 3:   // 3 - Plataformes
                 Debug.Log("Teleportant a zona: " + zona);
                 j.position = new Vector3(-13.74f, 1.5f, 0.02f);
-                break; 
+                break;
 
             case 4:   // 4 - Zona perill
                 Debug.Log("Teleportant a zona: " + zona);
@@ -55,15 +58,15 @@ public class Deathzone : MonoBehaviour
                 Debug.Log("Teleportant a zona: " + zona);
                 j.position = new Vector3(1.75f, 1.5f, 2.74f);
                 break;
-      
+
             default:
                 Debug.Log("Aixo no hauria de apareixer");
                 break;
         }
 
-
         RBBola.velocity = new Vector3(0, 0, 0);
 
+        }
 
 
 
